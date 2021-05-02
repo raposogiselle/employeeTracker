@@ -10,5 +10,8 @@ findAllEmployees() {
         "SELECT employee.id, employee.first_name, employee.last_name, role.title, department.name AS department"
         );
 }
-
+    addDepartment(department){
+        return this.connection.query(
+            'INSERT INTO department SET ?', department)
+    }
 }
