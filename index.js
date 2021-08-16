@@ -36,18 +36,12 @@ function loadMainPrompts() {
                 name: "Add Employee",
                 value: "ADD_EMPLOYEE"
             },
-            // {
-            //     name: "Remove Employee",
-            //     value: "REMOVE_EMPLOYEE"
-            // },
+            
             {
                 name: "Update Employee Role",
                 value: "UPDATE_EMPLOYEE_ROLE"
             },
-            // {
-            //     name: "Update Employee Manager",
-            //     value: "UPDATE_EMPLOYEE_MANAGER"
-            // },
+            
             {
                 name: "View All Roles",
                 value: "VIEW_ROLES"
@@ -64,14 +58,7 @@ function loadMainPrompts() {
                 name: "Add Department",
                 value: "ADD_DEPARTMENT"
             },
-            // {
-            //     name: "Remove Department",
-            //     value: "REMOVE_DEPARTMENT"
-            // },
-            // {
-            //     name: "Remove Role",
-            //     value: "REMOVE_ROLE"
-            // },
+            
             {
                 Name: "Quit",
                 value: "QUIT"
@@ -92,24 +79,18 @@ function loadMainPrompts() {
             case "ADD_EMPLOYEE":
                 addEmployee();
                 break;
-            // case "REMOVE_EMPLOYEE":
-            //     removeEmployee();
-            //     break;
+            
             case "UPDATE_EMPLOYEE_ROLE":
                 updateEmployeeRole();
                 break;
-            // case "UPDATE_EMPLOYEE_MANAGER":
-            //     updateEmployeeManager();
-            //     break;
+            
             case "VIEW_DEPARTMENTS":
                 viewDepartments();
                 break;
             case "ADD_DEPARTMENT":
                 addDepartment();
                 break;
-            // case "REMOVE_DEPARTMENT":
-            //     removeDepartment();
-            //     break;
+            
             case "VIEW_ROLES":
                 viewRoles();
                 break;
@@ -126,6 +107,7 @@ function loadMainPrompts() {
 // VIEW ALL DEPTS/ROLES/EES FUNCTIONS
 
 function viewEmployees() {
+    console.log("hello-1");
     db.findAllEmployees()
         .then(([rows]) => {
             let employees = rows;
@@ -133,6 +115,7 @@ function viewEmployees() {
             console.table(employees);
             loadMainPrompts();
         })
+        console.log("hello-2");
     // .then(() => loadMainPrompts());
 }
 
